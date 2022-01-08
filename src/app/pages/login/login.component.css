@@ -1,0 +1,19 @@
+.center {
+    text-align:center;
+}
+
+.fa-icon
+{
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+    color: aqua;
+}
+
+.user-icon{
+    color: rgb(119, 179, 31);
+}
+
+.full-width{
+    width: 100%;
+}

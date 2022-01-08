@@ -1,0 +1,41 @@
+<mat-card> 
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <h1>Profile Details</h1>
+                    <img src="../../../assets/adminlogo.jpg" alt="" srcset="" class="profile-image">
+                    <h1 style="margin-top: 10px;">{{currentUser.id}}</h1>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table table-bordered">
+                            
+                            <tr>
+                                <td>Email</td>
+                                <td>{{ currentUser.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>Full Name</td>
+                                <td>{{ currentUser.fullname }}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{ currentUser.roles?.values()?.next()?.value['role'] }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Status</td>
+                                <td>Active</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary" style="min-width: 150px;">Update</button>
+      </mat-card-actions>
+</mat-card>

@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+    background: white;
+}
+
+.mt20
+{
+    margin-top: 20px;
+}
+.mb20
+{
+    margin-bottom: 20px;
+
+}
+.ml20
+{
+    margin-left: 20px;
+}
+
+.mr20
+{
+    margin-right: 20px;
+}
+.profile-image
+{
+    max-width: 150px;
+    max-height: 150px;
+    border: 2px solid black;
+    border-radius: 50%;
+
+}
+
+
+.custom-card {
+    width: 350px;
+    max-width: 100%;
+    background-color: #eee;
+  }
+  
+  .user-icon {
+    font-size: 100px;
+    color: #50A057;
+  }
+
+.padding-0{
+    padding-right:0;
+    padding-left:1px;
+}
+
+
+.full-width{
+    width: 100%;
+    background-color: white;
+}
+
+.mat-dialog-container {
+    background-color: #ebebeb !important;
+  }

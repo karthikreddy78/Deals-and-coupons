@@ -1,0 +1,20 @@
+.example-container {
+  position: absolute;
+  top: 63px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(247, 247, 229);
+  }
+
+  .mat-mav
+  {
+    background: rgb(247, 247, 229);
+  }
+
+  
+.mat-card
+{
+    background-color: #ebebeb !important;
+    border-width : 0px !important;
+}

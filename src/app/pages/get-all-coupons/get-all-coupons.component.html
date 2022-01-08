@@ -1,0 +1,35 @@
+
+
+
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 padding-1" *ngFor="let coupon of couponList; index as ind">
+                <mat-card class="example-card">
+                    <mat-card-header class="text-center">
+                        <div class="container-fluid icon mleft-0">
+                            <mat-icon mat-list-icon [inline]="true">account_box</mat-icon>
+                        </div>
+                    </mat-card-header>
+                    <mat-card-content>
+        
+                        <mat-action-list>
+                            <mat-list-item class="mt padding-0">
+                                <div mat-line><mat-icon mat-list-icon class="mat-18">badge</mat-icon>{{ coupon.code }}</div>
+                                <div mat-line> <mat-icon mat-list-icon class="mat-18">email</mat-icon>{{ coupon.company }}</div>
+                                <div mat-line> <mat-icon mat-list-icon class="mat-18">face</mat-icon>{{ coupon.category }}</div>
+                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.couponname }}</div>
+                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.description }}</div>
+                            </mat-list-item>
+                        </mat-action-list>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center ml mb" *ngIf="isAdmin()">
+                      <button mat-raised-button (click)="deleteCoupon(coupon)" color="warn">Delete</button>
+                    </mat-card-actions>
+                  </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>
+

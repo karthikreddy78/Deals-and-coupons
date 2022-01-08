@@ -1,0 +1,112 @@
+
+
+<h2 mat-dialog-title class="text-center">Update Coupon</h2>
+<mat-dialog-content>
+    
+                    <mat-card color="primary">
+                        <mat-card-content>
+                            <form #f="ngForm" (ngSubmit)="f.form.valid && register()">
+    
+                                <div class="alert alert-danger" *ngIf="errorMessage">
+                                    {{errorMessage}}
+                                </div>
+    
+                                <p>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Code</mat-label>
+                                        <input matInput placeholder="Coupon Code" name="code" id="code" required #code="ngModel"
+                                            [class.is-invalid]="code.invalid && code.touched" [(ngModel)]=coupon.code>
+    
+                                        <mat-error *ngIf="code.errors?.['required']">
+                                            Code is required
+                                        </mat-error>
+    
+                                    </mat-form-field>
+                                </p>
+    
+    
+                                <p>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Coupon Name</mat-label>
+                                        <input matInput placeholder="Coupon Name" name="name" id="name" required #name="ngModel"
+                                            [class.is-invalid]="name.invalid && name.touched" [(ngModel)]=coupon.couponname>
+    
+                                        <mat-error *ngIf="name.errors?.['required']">
+                                            Coupon name is required
+                                        </mat-error>
+    
+                                    </mat-form-field>
+                                </p>
+    
+                                <p>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Description</mat-label>
+                                        <textarea matInput name="description" id="description" #description="ngModel" [(ngModel)]=coupon.description></textarea>
+    
+                                    </mat-form-field>
+                                </p>
+    
+    
+                                <p>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Choose a Start date</mat-label>
+                                        <input matInput [matDatepicker]="picker" [(ngModel)]=coupon.startDate #startDate="ngModel" name="startDate" id="startDate">
+                                        <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                      
+                                    </mat-form-field>
+                                </p>
+    
+    
+                                <p>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Choose a End date</mat-label>
+                                        <input matInput [matDatepicker]="picker1" [(ngModel)]=coupon.endDate #endDate="ngModel" name="endDate" id="endDate" >
+                                        <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                      
+                                    </mat-form-field>
+                                </p>
+    
+                                
+                                <p>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Choose offer</mat-label>
+                                        <input matInput placeholder="Code offer" name="offer" id="offer" required #offer="ngModel"
+                                            [class.is-invalid]="offer.invalid && offer.touched" [(ngModel)]=coupon.offer>
+    
+                                        <mat-error *ngIf="offer.errors?.['required']">
+                                            Coupon offer is required
+                                        </mat-error>
+    
+                                    </mat-form-field>
+                                </p>
+    
+                                <p>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Choose a Category</mat-label>
+                                        <mat-select (blur)="validateCategory(category.value)" (change)="validateCategory(category.value)"
+                                            #category="ngModel" [class.is-invalid]="categoryHasError && category.touched" name="category"
+                                            id="" [(ngModel)]=coupon.category>
+                                            <mat-option *ngFor="let category of categories" value="{{category}}">{{category}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </p>
+    
+                                <div class="container text-center">
+                                    <button type="submit" [disabled]="f.form.invalid || categoryHasError" mat-raised-button
+                                        color="primary">Add Coupon</button>
+                                </div>
+    
+                            </form>
+                        </mat-card-content>
+                    </mat-card>
+    
+    
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>
+
+

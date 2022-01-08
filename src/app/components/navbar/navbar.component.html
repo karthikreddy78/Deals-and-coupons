@@ -1,0 +1,20 @@
+<mat-toolbar class="bg-tool-bar">
+    <button mat-icon-button style="color: white;" class="example-icon" aria-label="Example icon-button with menu icon" [routerLink]="['/home']" routerLinkActive="active">
+      <mat-icon>savings</mat-icon>
+    </button>
+    <span style="color: white;">DCF</span>
+    <button mat-button style="margin-right: 20px ; margin-left: 20px; min-width:100px; color: white; font-size: large;" *ngIf="isAdmin()" [routerLink]="['/admin']">Admin</button>
+    <button mat-button style="margin-right: 20px ; margin-left: 20px; min-width:100px; color: white; font-size: large;" *ngIf="isCompany()" [routerLink]="['/company']">Company</button>
+    <button mat-button style="margin-right: 20px ; margin-left: 20px; min-width:100px; color: white; font-size: large;" *ngIf="isUser()" [routerLink]="['/user']">User</button>
+    <span class="example-spacer"></span>
+    <div *ngIf="!currentUser?.id">
+    <button mat-flat-button style="min-width: 100px;" [routerLink]="['/login']" routerLinkActive="active" >Login </button>
+    <button mat-flat-button [routerLink]="['/signup']" style="margin-right: 20px ; margin-left: 20px; min-width:100px" routerLinkActive="active" >Register</button>
+    </div>
+
+    <div *ngIf="currentUser?.id">
+        <button mat-flat-button style="min-width: 100px;" (click)="properRole()" routerLinkActive="active" >{{currentUser.fullname}} </button>
+        <button mat-flat-button (click)="logOut()" style="margin-right: 20px ; margin-left: 20px; min-width:100px" routerLinkActive="active" >Log Out</button>
+        </div>
+</mat-toolbar>
+  
