@@ -9,5 +9,9 @@ export class User {
     token:string="";
     enabled:boolean=true;
     roles:Set<Role> | undefined
+
+
+    User()
+    {}
     //private Set<Role> roles= new HashSet<>();
 }

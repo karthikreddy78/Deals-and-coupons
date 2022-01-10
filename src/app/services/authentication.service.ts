@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { CouponNew } from '../models/coupon-new.model';
 import { User } from '../models/user.model';
 
 
@@ -59,5 +60,11 @@ export class AuthenticationService {
   logOut() {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(new User);
+  }
+
+
+  postCouponFake(coupon: any)
+  {
+    return this.http.post("http://localhost:5100/coupons/addcoupon",coupon);
   }
 }

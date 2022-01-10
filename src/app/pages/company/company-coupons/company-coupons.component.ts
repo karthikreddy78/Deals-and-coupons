@@ -8,6 +8,7 @@ import { CompanyService } from 'src/app/services/company.service';
 import Swal from 'sweetalert2';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UpdateCouponComponent } from '../update-coupon/update-coupon.component';
+import { CouponLatest } from 'src/app/models/coupon-latest.model';
 
 @Component({
   selector: 'app-company-coupons',
@@ -17,7 +18,7 @@ import { UpdateCouponComponent } from '../update-coupon/update-coupon.component'
 export class CompanyCouponsComponent implements OnInit {
 
   faUser = faUserCircle;
-  couponList: Array<Coupon> = []
+  couponList: Array<CouponLatest> = []
   currentUser: User = new User;
   role:string="";
 
@@ -49,6 +50,10 @@ export class CompanyCouponsComponent implements OnInit {
   {
     this.companyService.getCouponsofCompany(this.currentUser.id).subscribe(data => {
       this.couponList = data
+      this.couponList.forEach((c: { image: string; }) => {
+        c.image= 'data:image/jpeg;base64,'+ c.image
+        
+      });
       console.log("hello");
       
       console.log(this.couponList);
@@ -58,7 +63,7 @@ export class CompanyCouponsComponent implements OnInit {
     })
   }
 
-  deleteCoupon(coupon: Coupon) {
+  deleteCoupon(coupon: CouponLatest) {
 
 
     Swal.fire({
@@ -106,9 +111,14 @@ export class CompanyCouponsComponent implements OnInit {
 
 
     //update COupon
-    updateCoupon()
+    updateCoupon(coupon:CouponLatest)
     {
-      this.dialog.open(UpdateCouponComponent,{height:'600px',width:'600px'});
+      let d=this.dialog.open(UpdateCouponComponent,{height:'600px',width:'600px',data:{coupon}});
+      d.afterClosed().subscribe(data => {
+        
+        console.log(data);
+        
+      })
     }
 
 

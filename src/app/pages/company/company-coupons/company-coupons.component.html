@@ -4,13 +4,15 @@
 <div class="bootstrap-wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 padding-1" *ngFor="let coupon of couponList; index as ind">
+            <div class="col-md-3 padding-1" *ngFor="let coupon of couponList; index as ind">
                 <mat-card class="example-card">
-                    <mat-card-header class="text-center">
-                        <div class="container-fluid icon mleft-0">
-                            <mat-icon mat-list-icon [inline]="true">account_box</mat-icon>
+                    <!-- <mat-card-header class="text-center">
+                        <div class="container-fluid icon mleft-0 ">
+                            <img [src]="coupon.image" style="border: none; width: 100%;">
                         </div>
-                    </mat-card-header>
+                    </mat-card-header> -->
+                    <img mat-card-image [src]="coupon.image" class="photo" alt="Photo of Coupon">
+ 
                     <mat-card-content>
         
                         <mat-action-list>
@@ -26,7 +28,7 @@
                         </mat-action-list>
                     </mat-card-content>
                     <mat-card-actions class="text-center ml mb">
-                        <button mat-raised-button (click)="updateCoupon()" style="margin-right: 20px;">Update</button>
+                        <button mat-raised-button (click)="updateCoupon(coupon)" style="margin-right: 20px;">Update</button>
                       <button mat-raised-button (click)="deleteCoupon(coupon)" color="warn">Delete</button>
                     </mat-card-actions>
                   </mat-card>

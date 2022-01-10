@@ -38,6 +38,7 @@ import { CompanyWelcomeComponent } from './pages/company/company-welcome/company
 import { CompanyCouponsComponent } from './pages/company/company-coupons/company-coupons.component';
 import { GetAllCouponsComponent } from './pages/get-all-coupons/get-all-coupons.component';
 import { UpdateCouponComponent } from './pages/company/update-coupon/update-coupon.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { UpdateCouponComponent } from './pages/company/update-coupon/update-coup
     CompanyWelcomeComponent,
     CompanyCouponsComponent,
     GetAllCouponsComponent,
-    UpdateCouponComponent
+    UpdateCouponComponent,
+    AboutusComponent
   ],
   entryComponents:[UpdateCouponComponent],
   imports: [

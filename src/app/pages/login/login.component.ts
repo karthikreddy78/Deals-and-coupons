@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
-    
-    var iterator = this.authenticationService.currentUserValue.roles?.values();
+   
+    var iterator = this.authenticationService.currentUserValue?.roles?.values();
     this.role=iterator?.next()?.value['role']
     if (this.authenticationService.currentUserValue?.id) {   
       console.log(this.authenticationService.currentUserValue?.id);
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       return;
       
     }
+    
   }
 
   login() {

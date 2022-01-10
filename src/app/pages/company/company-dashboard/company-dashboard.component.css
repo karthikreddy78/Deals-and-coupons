@@ -7,3 +7,9 @@
 {
     background-color: #ebebeb !important;
 }
+
+.dashboard-col-2
+{
+    background-color: rgb(241, 240, 237);
+    min-height: 590px
+}

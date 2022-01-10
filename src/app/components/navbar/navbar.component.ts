@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     this.authenticationService.currentUser.subscribe(data => {
       this.currentUser = data;
       //console.log((this.currentUser.roles));
-      var iterator = this.currentUser.roles?.values();
+      var iterator = this.currentUser?.roles?.values();
      
       
         this.role=iterator?.next()?.value['role']

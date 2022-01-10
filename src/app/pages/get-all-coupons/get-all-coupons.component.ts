@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CouponLatest } from 'src/app/models/coupon-latest.model';
 import { Coupon } from 'src/app/models/coupon.model';
 import { User } from 'src/app/models/user.model';
 import { AdminService } from 'src/app/services/admin.service';
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./get-all-coupons.component.css'],
 })
 export class GetAllCouponsComponent implements OnInit {
-  couponList: Array<Coupon> = [];
+  couponList: Array<CouponLatest> = [];
   currentUser: User = new User();
   role: string = '';
 
@@ -42,6 +43,10 @@ export class GetAllCouponsComponent implements OnInit {
     this.userService.getAllCoupons().subscribe(
       (data) => {
         this.couponList = data;
+        this.couponList.forEach((c: { image: string; }) => {
+          c.image= 'data:image/jpeg;base64,'+ c.image
+          
+        });
         console.log('hello');
 
         console.log(this.couponList);
@@ -52,7 +57,7 @@ export class GetAllCouponsComponent implements OnInit {
     );
   }
 
-  deleteCoupon(coupon: Coupon) {
+  deleteCoupon(coupon: CouponLatest) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -93,6 +98,23 @@ export class GetAllCouponsComponent implements OnInit {
   {
     return this.role ==='ADMIN'
   }
+
+  isUser()
+  {
+    return this.role === 'USER'
+  }
+
+  goToLink(url: string){
+    if(url.substring(0, 5)!== "https")
+    {
+    window.open("https://"+url, "_blank");
+    }
+    else
+    {
+      window.open(url, "_blank");
+    }
+
+}
 }
 
 // let currentUrl = this.router.url;

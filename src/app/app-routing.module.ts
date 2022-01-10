@@ -32,7 +32,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: ["ADMIN"] },
     children:[
-      {path:'',component:AdminWelcomeComponent},
+      {path:'',redirectTo: '/admin/allcoupons',pathMatch:'full'},
       {path:'home',component:HomeComponent},
       {path:'profile',component:ProfileComponent},
       { path: "getallusers", component: GetallusersComponent},

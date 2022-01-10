@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { CouponLatest } from '../models/coupon-latest.model';
 import { Coupon } from '../models/coupon.model';
 import { User } from '../models/user.model';
 import { AuthenticationService } from './authentication.service';
@@ -41,7 +42,7 @@ export class AdminService extends RequestBaseService{
     return this.http.post(API_URL+"/adduser",user, {headers: this.getHeaders});
   }
 
-  deleteCouponByCode(coupon: Coupon): Observable<any> {
+  deleteCouponByCode(coupon: CouponLatest): Observable<any> {
 
     console.log(coupon);
     

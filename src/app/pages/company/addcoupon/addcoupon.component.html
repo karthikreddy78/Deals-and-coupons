@@ -14,12 +14,30 @@
                         </div>
                     </mat-card-header>
                     <mat-card-content>
-                        <form #f="ngForm" (ngSubmit)="f.form.valid && register()">
+                        <form #f="ngForm" (ngSubmit)="f.form.valid && addCouponAction()">
 
                             <div class="alert alert-danger" *ngIf="errorMessage">
                                 {{errorMessage}}
                             </div>
+                            <div>
+                            <div style="margin-bottom:30px">
+                                <label for="formFile" class="form-label">Default file input example</label>
+                                <input class="form-control" type="file" id="formFile" (change)="onImageUpload($event)">
+                              </div>
+                            </div>
 
+                            <p>
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Add Url</mat-label>
+                                    <input matInput placeholder="Coupon Url" name="url" id="url" required #url="ngModel"
+                                        [class.is-invalid]="url.invalid && url.touched" [(ngModel)]=coupon.url>
+
+                                    <mat-error *ngIf="url.errors?.['required']">
+                                       Url is required
+                                    </mat-error>
+
+                                </mat-form-field>
+                            </p>
                             <p>
                                 <mat-form-field class="full-width" appearance="outline">
                                     <mat-label>Code</mat-label>
@@ -102,6 +120,16 @@
                                 </mat-form-field>
                             </p>
 
+                            <!-- <p>
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Add an image</mat-label>
+                                    <input matInput type="file" (change)="onImageUpload($event)" name="file" id="file" required>
+
+                                </mat-form-field>
+                            </p> -->
+
+                            
+
                             <div class="container text-center">
                                 <button type="submit" [disabled]="f.form.invalid || categoryHasError" mat-raised-button
                                     color="primary">Add Coupon</button>
@@ -116,4 +144,3 @@
     </div>
 
 </div>
-
