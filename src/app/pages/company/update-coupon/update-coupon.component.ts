@@ -73,14 +73,25 @@ export class UpdateCouponComponent implements OnInit {
    register()
    {
      this.coupon1.company=this.companyService.currentUser.id
+     
+     this.coupon1.code=this.coupon.code
+     this.coupon1.couponname=this.coupon.couponname
+     this.coupon1.description=this.coupon.description
+     this.coupon1.category=this.coupon.category
+     this.coupon1.company=this.coupon.company
+     this.coupon1.startDate=this.coupon.startDate
+     this.coupon1.endDate=this.coupon.endDate
+     this.coupon1.offer=this.coupon.offer
+
      console.log(this.coupon1);
+     
      
      
      
     
      
      
-     this.companyService.updateCouponByName(this.coupon).subscribe(data=>{
+     this.companyService.updateCouponByName(this.coupon1).subscribe(data=>{
        Swal.fire( "Coupon Updated Successfully")
  
      }, err => {

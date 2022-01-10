@@ -49,7 +49,7 @@ const routes: Routes = [
     data: { roles: ["COMPANY"]},
     children:
     [
-      {path:'',component:CompanyWelcomeComponent},
+      {path:'',redirectTo: '/company/allcoupons',pathMatch:'full'},
       {path:'home',component:HomeComponent},
       {path:'profile',component:ProfileComponent},
       {path:'addcoupon',component:AddcouponComponent},
@@ -63,7 +63,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: ["USER"] },
     children:[
-      {path:'',component:HomeComponent},
+      {path:'',redirectTo: '/user/allcoupons',pathMatch:'full'},
       {path:'profile',component:ProfileComponent},
       {path:'allcoupons',component:GetAllCouponsComponent}
       

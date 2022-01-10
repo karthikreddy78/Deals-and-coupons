@@ -27,10 +27,17 @@
                       
                         </mat-action-list>
                     </mat-card-content>
-                    <mat-card-actions class="text-center ml mb">
-                        <button mat-raised-button (click)="updateCoupon(coupon)" style="margin-right: 20px;">Update</button>
-                      <button mat-raised-button (click)="deleteCoupon(coupon)" color="warn">Delete</button>
-                    </mat-card-actions>
+                    <mat-card-actions class="text-center mb">
+                        <div>
+                            <button mat-raised-button class="full-width" (click)="updateCoupon(coupon)" style="margin-bottom: 20px; background-color: grey;">Update</button>
+      
+                        </div>
+                        <div>
+                            <button mat-raised-button class="full-width" (click)="deleteCoupon(coupon)" color="warn">Delete</button>
+       
+                        </div>
+                  </mat-card-actions>
+                     
                   </mat-card>
 
             </div>

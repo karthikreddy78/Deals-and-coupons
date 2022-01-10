@@ -82,7 +82,7 @@ export class CompanyService extends RequestBaseService{
   {
     console.log(coupon);
     
-    return this.http.put(API_URL+"/coupons/updatecouponbycouponname/{id}"+coupon.couponname,coupon, {headers: this.getHeaders});
+    return this.http.put(API_URL+"/coupons/updatecouponbycouponname/"+coupon.couponname,coupon, {headers: this.getHeaders});
   }
   
 }
