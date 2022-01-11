@@ -117,6 +117,7 @@ export class CompanyCouponsComponent implements OnInit {
       d.afterClosed().subscribe(data => {
         
         console.log(data);
+        window.location.reload()
         
       })
     }

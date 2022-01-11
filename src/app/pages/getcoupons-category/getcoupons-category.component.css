@@ -1,0 +1,63 @@
+.example-card {
+    max-width: 100%;
+  }
+
+.padding-0{
+    padding-right:0;
+    padding-left:1px;
+}
+
+.padding-1{
+    padding-left:4px;
+    padding-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+/* .icon {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 50px;
+} */
+
+.mt
+{
+    margin-top: 1px;
+}
+
+.ml
+{
+    margin-left: 10px;
+}
+.mb
+{
+    margin-bottom: 10px;
+}
+.mleft-0
+{
+    margin-left: 0px;
+}
+
+.mat-card
+{
+    /* background-color: 1877F2 !important; */
+    background-image: linear-gradient(to right top, #f8f0ed, #f8f0ed, #f8f0ed, #f8f0ed, #f8f0ed);
+}
+
+.mat-card-header-text
+{
+    width:0px;
+    height:0px;
+}
+
+
+.photo{
+    width:100%;
+    height:200px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

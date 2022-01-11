@@ -26,6 +26,11 @@ export class CompanyService extends RequestBaseService{
     });
   }
 
+  updateUser(user:User): Observable<any> {
+    console.log(user);
+    
+    return this.http.put(API_URL+"/updatebyusername/"+user.id,user, {headers: this.getHeaders});
+  }
   deleteUser(user: User): Observable<any> {
     return this.http.delete( `${API_URL}/deletebyname/${user.id}`, {headers: this.getHeaders});
   }
@@ -83,6 +88,12 @@ export class CompanyService extends RequestBaseService{
     console.log(coupon);
     
     return this.http.put(API_URL+"/coupons/updatecouponbycouponname/"+coupon.couponname,coupon, {headers: this.getHeaders});
+  }
+
+  getUserById():Observable<any>
+  {
+    
+    return this.http.get( API_URL+"/username/"+this.currentUser.id, {headers: this.getHeaders});
   }
   
 }

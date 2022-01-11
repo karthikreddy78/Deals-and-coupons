@@ -1,0 +1,44 @@
+<h2 mat-dialog-title class="text-center">Update</h2>
+<form #f="ngForm" (ngSubmit)="f.form.valid && update()">
+    <mat-dialog-content>
+    <p>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" name="id" id="id" required #id="ngModel"
+                 [(ngModel)]=user.id disabled>
+
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Email" required
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel"
+                [class.is-invalid]="email.invalid && email.touched" name="email" id="email"
+                [(ngModel)]=user.email disabled>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" id="password" name="password"
+                [(ngModel)]="user.password" #password="ngModel" required>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name" required #fullname="ngModel" name="fullname"
+                id="fullname" [(ngModel)]=user.fullname>
+        </mat-form-field>
+    </p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="accent" [mat-dialog-close]="false">Cancel</button>
+  <button type="submit" mat-raised-button color="primary" [mat-dialog-close]="true">Update</button>
+</mat-dialog-actions>
+</form>

@@ -39,6 +39,9 @@ import { CompanyCouponsComponent } from './pages/company/company-coupons/company
 import { GetAllCouponsComponent } from './pages/get-all-coupons/get-all-coupons.component';
 import { UpdateCouponComponent } from './pages/company/update-coupon/update-coupon.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { GetcouponsCategoryComponent } from './pages/getcoupons-category/getcoupons-category.component';
+import { UpdateprofileComponent } from './pages/updateprofile/updateprofile.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     CompanyCouponsComponent,
     GetAllCouponsComponent,
     UpdateCouponComponent,
-    AboutusComponent
+    AboutusComponent,
+    UserSidebarComponent,
+    GetcouponsCategoryComponent,
+    UpdateprofileComponent
   ],
   entryComponents:[UpdateCouponComponent],
   imports: [

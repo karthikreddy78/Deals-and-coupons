@@ -13,7 +13,7 @@
     </div>
 
     <div *ngIf="currentUser?.id">
-        <button mat-flat-button style="min-width: 100px;" (click)="properRole()" routerLinkActive="active" >{{currentUser.fullname}} </button>
+        <button mat-flat-button style="min-width: 100px;" (click)="properRole()" routerLinkActive="active" >{{currentUser.id}} </button>
         <button mat-flat-button (click)="logOut()" style="margin-right: 20px ; margin-left: 20px; min-width:100px" routerLinkActive="active" >Log Out</button>
         </div>
 </mat-toolbar>

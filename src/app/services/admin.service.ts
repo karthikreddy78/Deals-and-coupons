@@ -49,5 +49,15 @@ export class AdminService extends RequestBaseService{
     return this.http.delete( `${API_URL}/coupons/deletebyid/${coupon.code}` , {headers: this.getHeaders});
   }
 
+  updateUser(user: User): Observable<any>
+  {
+    return this.http.put(API_URL+"/updatebyusername/"+user.id,user, {headers: this.getHeaders});
+  }
+
+  getUserById():Observable<any>
+  {
+    
+    return this.http.get( API_URL+"/username/"+this.currentUser.id, {headers: this.getHeaders});
+  }
   
 }

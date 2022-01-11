@@ -24,9 +24,29 @@ export class UserService extends RequestBaseService {
   }
 
 
+
+
+  updateUser(user:User): Observable<any> {
+    return this.http.put(API_URL+"/updatebyusername/"+user.id,user, {headers: this.getHeaders});
+  }
   getAllCoupons(): Observable<any> {
     //console.log( {headers: this.getHeaders});
     
     return this.http.get( `${API_URL}/coupons/couponslist`, {headers: this.getHeaders});
+  }
+
+
+  getCouponCategory(value: string):Observable<any>
+  {
+    console.log(value);
+    
+    return this.http.get( API_URL+"/coupons/category/"+value, {headers: this.getHeaders});
+  }
+  
+
+  getUserById():Observable<any>
+  {
+    
+    return this.http.get( API_URL+"/username/"+this.currentUser.id, {headers: this.getHeaders});
   }
 }

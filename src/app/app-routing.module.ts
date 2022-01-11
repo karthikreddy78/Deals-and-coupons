@@ -15,6 +15,7 @@ import { CompanyWelcomeComponent } from './pages/company/company-welcome/company
 import { NotAuthorisedComponent } from './pages/errors/not-authorised/not-authorised.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { GetAllCouponsComponent } from './pages/get-all-coupons/get-all-coupons.component';
+import { GetcouponsCategoryComponent } from './pages/getcoupons-category/getcoupons-category.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -39,7 +40,8 @@ const routes: Routes = [
       {path:'getusersonrole',component: GetusersonroleComponent},
       {path:'adduser',component:AdduserComponent},
       {path:'deleteuser',component:DeleteuserComponent},
-      {path:'allcoupons',component:GetAllCouponsComponent}
+      {path:'allcoupons',component:GetAllCouponsComponent},
+      { path: 'categorycoupons/:id', component: GetcouponsCategoryComponent}
     ]
   },
   {
@@ -65,7 +67,8 @@ const routes: Routes = [
     children:[
       {path:'',redirectTo: '/user/allcoupons',pathMatch:'full'},
       {path:'profile',component:ProfileComponent},
-      {path:'allcoupons',component:GetAllCouponsComponent}
+      {path:'allcoupons',component:GetAllCouponsComponent},
+      { path: 'categorycoupons/:id', component: GetcouponsCategoryComponent},
       
     ]
 

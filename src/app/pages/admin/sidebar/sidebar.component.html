@@ -22,6 +22,12 @@
         <button mat-list-item [routerLink]="['/admin/allcoupons']">
             <mat-icon mat-list-icon class="mat-18">person</mat-icon>Get All Coupons
         </button>
+
+        <div *ngFor="let item of arr">
+            <button mat-list-item [routerLink]="['/admin/categorycoupons',item]">
+                <mat-icon mat-list-icon class="mat-18">person</mat-icon>{{item}}
+            </button>
+        </div>
         
         
 

@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 padding-1" *ngFor="let coupon of couponList; index as ind">
+               
+                <mat-card class="example-card">
+                    <!-- <mat-card-header class="text-center">
+                        <div class="container-fluid icon ">
+                            <img [src]="coupon.image" style="border: none; max-width: 100%;max-height: 100%;">
+                        </div>
+                    </mat-card-header> -->
+                    <a (click)="goToLink(coupon.url)" >
+                    <img mat-card-image class="photo" [src]="coupon.image" alt="Photo of Coupon">
+                    <mat-card-content>
+        
+                        <mat-action-list>
+                           
+                                <div mat-line><mat-icon mat-list-icon class="mat-18">badge</mat-icon>{{ coupon.code }}</div>
+                                <div mat-line> <mat-icon mat-list-icon class="mat-18">email</mat-icon>{{ coupon.company }}</div>
+                                <div mat-line> <mat-icon mat-list-icon class="mat-18">face</mat-icon>{{ coupon.category }}</div>
+                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.couponname }}</div>
+                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.description }}</div>
+                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.offer }}</div>
+                          
+                        </mat-action-list>
+                    </mat-card-content>
+
+                   
+                    </a>
+                  
+                    <button *ngIf="isUser()" mat-raised-button class="full-width"  color="primary">Buy Coupon</button>
+                  </mat-card>
+                
+            </div>
+        </div>
+    </div>
+</div>
