@@ -82,6 +82,7 @@ export class UpdateCouponComponent implements OnInit {
      this.coupon1.startDate=this.coupon.startDate
      this.coupon1.endDate=this.coupon.endDate
      this.coupon1.offer=this.coupon.offer
+     this.coupon1.cost=this.coupon.cost
 
      console.log(this.coupon1);
      

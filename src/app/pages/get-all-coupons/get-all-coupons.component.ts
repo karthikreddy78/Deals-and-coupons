@@ -44,8 +44,8 @@ export class GetAllCouponsComponent implements OnInit {
       (data) => {
         this.couponList = data;
         this.couponList.forEach((c: { image: string; }) => {
-          c.image= 'data:image/jpeg;base64,'+ c.image
-          
+          c.image = 'data:image/jpeg;base64,' + c.image
+
         });
         console.log('hello');
 
@@ -68,14 +68,13 @@ export class GetAllCouponsComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        
-        
+
+
         this.adminService.deleteCouponByCode(coupon).subscribe(
           (data) => {
             console.log(data);
 
-            if(data!=null)
-            {
+            if (data != null) {
               Swal.fire('Deleted!', coupon.code + ' has been deleted.', 'success');
             }
             this.getAllCoupons();
@@ -94,27 +93,23 @@ export class GetAllCouponsComponent implements OnInit {
 
 
 
-  isAdmin()
-  {
-    return this.role ==='ADMIN'
+  isAdmin() {
+    return this.role === 'ADMIN'
   }
 
-  isUser()
-  {
+  isUser() {
     return this.role === 'USER'
   }
 
-  goToLink(url: string){
-    if(url.substring(0, 5)!== "https")
-    {
-    window.open("https://"+url, "_blank");
+  goToLink(url: string) {
+    if (url.substring(0, 5) !== "https") {
+      window.open("https://" + url, "_blank");
     }
-    else
-    {
+    else {
       window.open(url, "_blank");
     }
 
-}
+  }
 }
 
 // let currentUrl = this.router.url;

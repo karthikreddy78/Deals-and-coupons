@@ -1,15 +1,16 @@
 import { Category } from "./category.model";
 
 export class CouponLatest {
-    code:string="CODEY";
-    company:string="amazon";
+    code:string="";
+    company:string="";
     category:Category =Category.Clothing;
-    couponname:string="CODEY";
-    description:string="abcd";
+    couponname:string="";
+    description:string="";
     startDate: Date = new Date();
      endDate:Date =new Date(this.startDate.getFullYear()+1,this.startDate.getMonth(),this.startDate.getDate());
-    offer:number =60;
-    url:string="www.google.com"
+    offer:number =5;
+    url:string=""
+    cost:number=0
     imagename:string="";
 
     imagetype:string="";

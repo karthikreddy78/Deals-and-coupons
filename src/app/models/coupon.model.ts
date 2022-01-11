@@ -10,6 +10,7 @@ export class Coupon {
     startDate: Date = new Date();
      endDate:Date =new Date(this.startDate.getFullYear()+1,this.startDate.getMonth(),this.startDate.getDate());
     offer:number =0;
+    cost:number=0;
 
     constructor()
     {}

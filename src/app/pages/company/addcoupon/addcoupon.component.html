@@ -9,8 +9,8 @@
                 <mat-card color="primary">
                     <mat-card-header class="text-center">
                         <div class="container text-center">
-                            <img src="../../../assets/loginlogo.jpg" alt="" srcset="">
-                            <mat-card-title style="font-weight: bold;">Add Coupon</mat-card-title>
+                            <!-- <img src="../../../assets/loginlogo.jpg" alt="" srcset=""> -->
+                            <mat-card-title style="font-weight: bold;margin-top: 10px;">Add Coupon</mat-card-title>
                         </div>
                     </mat-card-header>
                     <mat-card-content>
@@ -108,6 +108,20 @@
 
                                 </mat-form-field>
                             </p>
+
+                            <p>
+                                <mat-form-field  class="full-width" appearance="outline">
+                                    <mat-label >Choose cost</mat-label>
+                                    <input matInput placeholder="Code cost" name="cost" id="cost" required #cost="ngModel"
+                                        [class.is-invalid]="cost.invalid && cost.touched" [(ngModel)]=coupon.cost>
+
+                                    <mat-error *ngIf="cost.errors?.['required']">
+                                        Coupon cost is required
+                                    </mat-error>
+
+                                </mat-form-field>
+                            </p>
+
 
                             <p>
                                 <mat-form-field class="full-width" appearance="outline">

@@ -17,14 +17,16 @@
                     <mat-card-content>
         
                         <mat-action-list>
-                           
-                                <div mat-line><mat-icon mat-list-icon class="mat-18">badge</mat-icon>{{ coupon.code }}</div>
-                                <div mat-line> <mat-icon mat-list-icon class="mat-18">email</mat-icon>{{ coupon.company }}</div>
-                                <div mat-line> <mat-icon mat-list-icon class="mat-18">face</mat-icon>{{ coupon.category }}</div>
-                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.couponname }}</div>
-                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.description }}</div>
-                                <div mat-line><mat-icon mat-list-icon class="mat-18">play_arrow</mat-icon>{{ coupon.offer }}</div>
-                          
+                           <div style="font-size:16px">
+                                <div mat-line style="margin-top:10px"><b>Promocode:</b> {{ coupon.code }}</div>
+                                <div mat-line style="margin-top:10px"><b>Company:</b>  {{ coupon.company }}</div>
+                                <div style="margin-top:10px" mat-line> <b>Category:</b> {{ coupon.category }}</div>
+                                <div style="margin-top:10px" mat-line><b>Name:</b> {{ coupon.couponname }}</div>
+                                <div style="margin-top:10px" mat-line><b>Offer:</b> {{ coupon.offer }}%</div>
+                                <div style="margin-top:10px" mat-line> <b>Cost:</b> {{ coupon.cost }}$</div>
+                                <div style="margin-top:10px;min-height: 50px;"  mat-line> <b>Description:</b> {{ coupon.description }}</div>
+                               
+                            </div>
                         </mat-action-list>
                     </mat-card-content>
 

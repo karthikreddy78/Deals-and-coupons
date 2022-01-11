@@ -122,5 +122,15 @@ export class CompanyCouponsComponent implements OnInit {
       })
     }
 
+    goToLink(url: string) {
+      if (url.substring(0, 5) !== "https") {
+        window.open("https://" + url, "_blank");
+      }
+      else {
+        window.open(url, "_blank");
+      }
+  
+    }
+
 
 }
